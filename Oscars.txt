@@ -1,0 +1,23 @@
+name_of_actor = input()
+academy_points = float(input())
+br_ocen_n = int(input())
+all_points=academy_points
+condition=False
+for _ in range(br_ocen_n):
+    ocenyavasht=input()
+    points=float(input())
+    lenght=len(ocenyavasht)
+
+    all_points+=(lenght*points/2)
+
+    if all_points>1250.5:
+        condition=True
+        break
+
+diff=abs(all_points - 1250.5)
+if not condition:
+
+    print(f"Sorry, {name_of_actor} you need {diff:.1f} more!")
+
+else:
+    print(f"Congratulations, {name_of_actor} got a nominee for leading role with {all_points:.1f}!")

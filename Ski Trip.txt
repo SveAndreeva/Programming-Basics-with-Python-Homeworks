@@ -1,0 +1,31 @@
+days = int(input())
+type_of_property = input()
+rating = input()
+costs = 0
+numbers_of_nights = days - 1
+
+if type_of_property == "room for one person":
+    costs = 18 * numbers_of_nights
+elif type_of_property == "apartment":
+    costs = 25 * numbers_of_nights
+    if numbers_of_nights < 10:
+        costs -= costs * 0.3
+    elif 10 < numbers_of_nights <= 15:
+        costs -= costs * 0.35
+    elif numbers_of_nights > 15:
+        costs -= costs * 0.5
+elif type_of_property == "president apartment":
+    costs = 35 * numbers_of_nights
+    if numbers_of_nights < 10:
+        costs -= costs * 0.1
+    elif 10 < numbers_of_nights <= 15:
+        costs -= costs * 0.15
+    elif numbers_of_nights > 15:
+        costs -= costs * 0.2
+
+if rating == "positive":
+    costs += costs * 0.25
+elif rating == "negative":
+    costs -= costs * 0.1
+
+print((f"{costs:.2f}"))

@@ -1,0 +1,24 @@
+budget = float(input())
+video_cards = int(input())
+processors = int(input())
+ram_memories = int(input())
+
+total_video_cards_price = video_cards * 250
+processor_price = total_video_cards_price * 0.35
+ram_memories_price = total_video_cards_price * 0.1
+
+total_processor_price = processors * processor_price
+total_ram_memories_price = ram_memories * ram_memories_price
+
+total_price = total_video_cards_price + total_processor_price + total_ram_memories_price
+
+if video_cards > processors:
+    total_price -= total_price * 0.15
+
+diff = abs(budget - total_price)
+
+if budget >= total_price:
+    print(f"You have {diff:.2f} leva left!")
+else:
+    print(f"Not enough money! You need {diff:.2f} leva more!")
+

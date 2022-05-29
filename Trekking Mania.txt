@@ -1,0 +1,28 @@
+number_of_groups = int(input())
+musala = 0
+monblanc = 0
+kilimadzharo = 0
+k2 = 0
+everest = 0
+all_people = 0
+
+for _ in range(number_of_groups):
+    number_of_people_in_group = int(input())
+    all_people += number_of_people_in_group
+
+    if number_of_people_in_group <= 5:
+        musala += number_of_people_in_group
+    elif 6<= number_of_people_in_group <= 12:
+        monblanc += number_of_people_in_group
+    elif 13 <= number_of_people_in_group <= 25:
+        kilimadzharo += number_of_people_in_group
+    elif 26 <= number_of_people_in_group <= 40:
+        k2 += number_of_people_in_group
+    elif number_of_people_in_group >= 41:
+        everest += number_of_people_in_group
+
+print(f"{musala / all_people * 100:.2f}%")
+print(f"{monblanc / all_people * 100:.2f}%")
+print(f"{kilimadzharo / all_people * 100:.2f}%")
+print(f"{k2 / all_people * 100:.2f}%")
+print(f"{everest / all_people * 100:.2f}%")
